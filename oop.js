@@ -17,12 +17,20 @@ class Shelf {
     addTchotchke(tchotchke){
         this.tchotchkes.push(tchotchke);
     }
+    findBook(title){
+        return this.books.find((book)=> {return book.title == title})
+    }
 }
 
 const lordOfTheRings = new Book("Lord of the Rings: Return of the King", "JRR Tolkien", "Fantasy");
 lordOfTheRings.pages = 350;
+const catcherInTheRye = new Book("Catcher in the Rye", "JD Salinger", "Fiction");
+const dune = new Book ("Dune", "Frank Herbert", "Sci-Fi")
 // console.log(lordOfTheRings);
 
 const topShelf = new Shelf();
 topShelf.addBook(lordOfTheRings);
-console.log(topShelf);
+topShelf.addBook(catcherInTheRye);
+topShelf.addBook(dune);
+console.log(topShelf.findBook("Dune"));
+// console.log(topShelf);
